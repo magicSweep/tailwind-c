@@ -1,0 +1,76 @@
+{
+  "name": "tailwind-components",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/jest",
+    "tsc": "node ./node_modules/.bin/tsc",
+    "serve": "node ./server/serve/index.js",
+    "build": "cross-env NODE_ENV=\"production\" NODE_WEBPACK_ANALYZE=\"no\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "build:analyze": "cross-env NODE_ENV=\"production\" NODE_WEBPACK_ANALYZE=\"analyze\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
+    "start": "cross-env NODE_ENV=\"development NODE\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/compression-webpack-plugin": "^6.0.4",
+    "@types/copy-webpack-plugin": "^8.0.1",
+    "@types/mini-css-extract-plugin": "^2.0.1",
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-test-renderer": "^17.0.1",
+    "@types/terser-webpack-plugin": "^5.0.2",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-bundle-analyzer": "^4.4.1",
+    "@types/webpack-dev-server": "^3.11.5",
+    "@types/webpack-node-externals": "^2.5.0",
+    "autoprefixer": "^10.3.1",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "compression-webpack-plugin": "^8.0.1",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.1.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "http-server": "^0.12.3",
+    "identity-obj-proxy": "^3.0.0",
+    "mini-css-extract-plugin": "^2.1.0",
+    "postcss": "^8.3.5",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.1.1",
+    "postcss-preset-env": "^6.7.0",
+    "react-test-renderer": "^17.0.2",
+    "style-loader": "^3.1.0",
+    "tailwindcss": "^2.2.4",
+    "terser-webpack-plugin": "^5.1.4",
+    "ts-loader": "^9.2.3",
+    "ts-node": "^10.1.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.3.5",
+    "waait": "^1.0.5",
+    "webpack": "^5.45.1",
+    "webpack-bundle-analyzer": "^4.4.2",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
