@@ -17,6 +17,7 @@ module.exports = {
         disabled: "var(--color-disabled)", */
         ...colors,
         paper: "var(--color-paper)",
+        //"btn-hover": "var(--color-btn-hover)"
       },
       textColor: {
         title: "var(--color-title)",
@@ -36,9 +37,18 @@ module.exports = {
         ripple: {
           "100%": { transform: "scale(2)", opacity: 0 },
         },
+        progress: {
+          "0%": {
+            left: "-30%",
+          },
+          "100%": {
+            left: "100%",
+          },
+        },
       },
       animation: {
         ripple: "ripple .6s linear",
+        progress: "progress 3s ease 0s infinite normal none running",
       },
       minHeight: {
         36: "9rem",

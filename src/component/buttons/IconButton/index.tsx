@@ -2,7 +2,7 @@ import React from "react";
 
 import BaseButton, { BaseButtonProps } from "../BaseButton";
 
-export interface ButtonProps extends BaseButtonProps {
+export interface IconButtonProps extends BaseButtonProps {
   color?: "primary" | "secondary" | "transparent";
   paddingClasses?: string;
 }
@@ -12,7 +12,7 @@ export default ({
   paddingClasses = "p-3",
   color = "primary",
   ...props
-}: ButtonProps) => {
+}: IconButtonProps) => {
   const colorClasses = props.disabled === true ? "bg-disabled" : `bg-${color}`;
 
   return (

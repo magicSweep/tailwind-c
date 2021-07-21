@@ -9,7 +9,9 @@
     "serve": "node ./server/serve/index.js",
     "build": "cross-env NODE_ENV=\"production\" NODE_WEBPACK_ANALYZE=\"no\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
     "build:analyze": "cross-env NODE_ENV=\"production\" NODE_WEBPACK_ANALYZE=\"analyze\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack",
-    "start": "cross-env NODE_ENV=\"development NODE\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve"
+    "start": "cross-env NODE_ENV=\"development NODE\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "keywords": [],
   "author": "",
@@ -29,9 +31,18 @@
   "dependencies": {
     "cross-env": "^7.0.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/builder-webpack5": "^6.4.0-alpha.18",
+    "@storybook/manager-webpack5": "^6.4.0-alpha.18",
+    "@storybook/react": "^6.3.4",
     "@types/compression-webpack-plugin": "^6.0.4",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/mini-css-extract-plugin": "^2.0.1",
@@ -39,12 +50,14 @@
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/react-transition-group": "^4.4.2",
     "@types/terser-webpack-plugin": "^5.0.2",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.1",
     "@types/webpack-dev-server": "^3.11.5",
     "@types/webpack-node-externals": "^2.5.0",
     "autoprefixer": "^10.3.1",
+    "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "compression-webpack-plugin": "^8.0.1",
     "copy-webpack-plugin": "^9.0.1",

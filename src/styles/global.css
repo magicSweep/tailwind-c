@@ -2,6 +2,25 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer utilities {
+  .border-image {
+    border-image: none 100% / 1 / 0 stretch;
+  }
+  .border-colors {
+    border-color: var(--color-primary) rgb(199, 224, 244) rgb(199, 224, 244);
+  }
+  .bg-progress {
+    background: rgba(0, 0, 0, 0)
+      linear-gradient(
+        to right,
+        rgb(237, 235, 233) 0%,
+        var(--color-primary) 50%,
+        rgb(237, 235, 233) 100%
+      )
+      repeat scroll 0% 0%;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -19,8 +38,78 @@ a {
   text-decoration: none;
 }
 
-* {
+/* * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+} */
+
+.progress-indicator__track {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(237, 235, 233);
+  color: rgb(50, 49, 48);
+}
+
+.progress-indicator__bar {
+  height: 2px;
+  position: absolute;
+  transition: width 0.3s ease 0s;
+  width: 0px;
+  min-width: 33%;
+  background: rgba(0, 0, 0, 0)
+    linear-gradient(
+      to right,
+      rgb(237, 235, 233) 0%,
+      var(--color-primary) 50%,
+      rgb(237, 235, 233) 100%
+    )
+    repeat scroll 0% 0%;
+}
+
+/* CSS TRANSITION GROUP */
+.move--enter {
+  transform: translateY(100%);
+}
+.move--enter-active {
+  transform: translateY(0);
+  transition: transform 500ms ease-in;
+}
+.move--exit {
+  transform: translateY(0);
+}
+.move--exit-active {
+  transform: translateY(100%);
+  transition: transform 500ms ease-in;
+}
+
+.opacity--enter {
+  opacity: 0;
+}
+.opacity--enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+.opacity--exit {
+  opacity: 1;
+}
+.opacity--exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
+}
+
+.scale--enter {
+  transform: scale(0);
+}
+.scale--enter-active {
+  transform: scale(1);
+  transition: transform 500ms ease-in;
+}
+.scale--exit {
+  transform: scale(1);
+}
+.scale--exit-active {
+  transform: scale(0);
+  transition: transform 500ms ease-in;
 }

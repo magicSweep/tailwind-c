@@ -1,4 +1,4 @@
-import React from "react";
+import { forwardRef } from "react";
 import { createElement, HTMLProps } from "react";
 import BoomEffect from "../../effects/Boom";
 
