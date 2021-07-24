@@ -1,4 +1,4 @@
-import "../src/styles/global.css";
+import "../src/styles/index.css";
 import { addDecorator } from "@storybook/react";
 import ThemeProvider from "./decorator/ThemeProvider";
 

@@ -1,0 +1,18 @@
+@layer utilities {
+  .border-image {
+    border-image: none 100% / 1 / 0 stretch;
+  }
+  .border-colors {
+    border-color: var(--color-primary) rgb(199, 224, 244) rgb(199, 224, 244);
+  }
+  .bg-progress {
+    background: rgba(0, 0, 0, 0)
+      linear-gradient(
+        to right,
+        rgb(237, 235, 233) 0%,
+        var(--color-primary) 50%,
+        rgb(237, 235, 233) 100%
+      )
+      repeat scroll 0% 0%;
+  }
+}

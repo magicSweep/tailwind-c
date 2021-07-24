@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import { useThemeUI } from "@theme-ui/core";
 //import Button from "../../component/Button";
-import "./../../styles/global.css";
+import "./../../styles/index.css";
 import Button from "../../component/buttons/Button";
 
 const App = () => {

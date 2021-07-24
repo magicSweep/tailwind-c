@@ -11,7 +11,7 @@ const colors = {
   title: "var(--color-title)",
 };
 
-module.exports = {
+const config = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   //purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -80,3 +80,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = config;
