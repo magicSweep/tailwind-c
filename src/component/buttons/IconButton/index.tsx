@@ -3,7 +3,7 @@ import React from "react";
 import BaseButton, { BaseButtonProps } from "../BaseButton";
 
 export interface IconButtonProps extends BaseButtonProps {
-  color?: "primary" | "secondary" | "transparent";
+  color?: Colors;
   paddingClasses?: string;
 }
 
@@ -21,6 +21,7 @@ export default ({
           ${colorClasses}
           ${paddingClasses}
           rounded-full
+          text-xs
     `}
       {...props}
     >

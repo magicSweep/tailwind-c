@@ -2,13 +2,15 @@ import React from "react";
 
 import BaseButton, { BaseButtonProps } from "../BaseButton";
 
-export interface ButtonProps extends BaseButtonProps {
-  color?: "primary" | "secondary";
+export interface PureButtonProps {
+  color?: Colors;
   size?: "small" | "medium" | "large";
   variant?: "contained" | "text" | "outlined";
   startIcon?: JSX.Element;
   endIcon?: JSX.Element;
 }
+
+export interface ButtonProps extends BaseButtonProps, PureButtonProps {}
 
 const getSizeClasses = (size: "small" | "medium" | "large") => {
   switch (size) {
@@ -26,7 +28,7 @@ const getSizeClasses = (size: "small" | "medium" | "large") => {
 
 const getVariantAndColorClasses = (
   variant: "contained" | "text" | "outlined",
-  color: "primary" | "secondary",
+  color: Colors,
   disabled: boolean
 ) => {
   switch (variant) {

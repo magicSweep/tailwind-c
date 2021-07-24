@@ -3,7 +3,7 @@ import { createElement, HTMLProps } from "react";
 import BoomEffect from "../../effects/Boom";
 
 export interface BaseButtonProps
-  extends Omit<React.HTMLProps<HTMLButtonElement>, "size"> {}
+  extends Omit<React.HTMLProps<HTMLButtonElement>, "size" | "color"> {}
 
 //type BaseButtonProps = Omit<React.HTMLProps<HTMLButtonElement>, 'size'>;
 

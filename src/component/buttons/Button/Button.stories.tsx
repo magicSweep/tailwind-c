@@ -38,7 +38,9 @@ export const WithIcons = () => {
   return (
     <>
       <Button
-        startIcon={<PlusIcon width={16} height={16} color="secondary" />}
+        startIcon={
+          <PlusIcon width={16} height={16} className={`fill-secondary`} />
+        }
         color="secondary"
         size="medium"
         variant="text"
@@ -48,7 +50,12 @@ export const WithIcons = () => {
 
       <Button
         endIcon={
-          <ArrowIcon direction="right" width={10} height={10} color="white" />
+          <ArrowIcon
+            direction="right"
+            width={10}
+            height={10}
+            className={`fill-white`}
+          />
         }
         size="small"
         variant="contained"
@@ -57,13 +64,15 @@ export const WithIcons = () => {
       </Button>
 
       <Button
-        startIcon={<PlusIcon width={16} height={16} color="secondary" />}
+        startIcon={
+          <PlusIcon width={16} height={16} className={`fill-secondary`} />
+        }
         endIcon={
           <ArrowIcon
             direction="right"
             width={10}
             height={10}
-            color="secondary"
+            className={`fill-secondary`}
           />
         }
         color="secondary"
@@ -90,15 +99,14 @@ export const Disabled = () => {
       </Button>
       <Button
         startIcon={
-          <PlusIcon disabled width={16} height={16} color="secondary" />
+          <PlusIcon width={16} height={16} className={`fill-disabled`} />
         }
         endIcon={
           <ArrowIcon
-            disabled
             direction="right"
             width={10}
             height={10}
-            color="secondary"
+            className={`fill-disabled`}
           />
         }
         color="secondary"

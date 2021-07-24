@@ -3,9 +3,9 @@ import React, { FC } from "react";
 export interface IconProps {
   width?: number;
   height?: number;
-  iconClass?: string;
-  disabled?: boolean;
-  color?: "primary" | "secondary" | "white";
+  className?: string;
+  //disabled?: boolean;
+  //color?: "primary" | "secondary" | "white" | "title";
 }
 
 interface BaseIconProps extends IconProps {
@@ -14,7 +14,7 @@ interface BaseIconProps extends IconProps {
 }
 
 const getColorClass = (
-  color: "primary" | "secondary" | "white",
+  color: "primary" | "secondary" | "title" | "white",
   disabled: boolean
 ) => (disabled === true ? "fill-disabled" : `fill-${color}`);
 /* 
@@ -26,15 +26,13 @@ const getColorClass = (color: "primary" | "secondary", disabled: boolean) => {
 const BaseIcon: FC<BaseIconProps> = ({
   width,
   height,
-  iconClass,
-  disabled,
+  className,
+  //disabled,
   viewBox,
   svgContent,
-  color = "primary",
+  //color = "primary",
 }) => {
-  let className = getColorClass(color, disabled === true);
-
-  className = `${className} ${iconClass ? iconClass : ""}`;
+  //let className = getColorClass(color, disabled === true);
 
   return (
     <svg

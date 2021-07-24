@@ -3,6 +3,12 @@ const colors = {
   secondary: "var(--color-secondary)",
   disabled: "var(--color-disabled)",
   white: "var(--color-white)",
+  error: "var(--color-error)",
+  info: "var(--color-info)",
+  warning: "var(--color-warning)",
+  success: "var(--color-success)",
+  body: "var(--color-text)",
+  title: "var(--color-title)",
 };
 
 module.exports = {
@@ -20,8 +26,8 @@ module.exports = {
         //"btn-hover": "var(--color-btn-hover)"
       },
       textColor: {
-        title: "var(--color-title)",
-        body: "var(--color-body)",
+        //title: "var(--color-title)",
+        //body: "var(--color-body)",
         ...colors,
         /* disabled: "var(--color-disabled)",
         primary: "var(--color-primary)",
@@ -51,6 +57,7 @@ module.exports = {
         progress: "progress 3s ease 0s infinite normal none running",
       },
       minHeight: {
+        5: "1.25rem",
         36: "9rem",
       },
       minWidth: {
@@ -64,8 +71,12 @@ module.exports = {
       },
     },
     variants: {
+      borderColor: ["focus-within", "focus", "hover"],
+      borderWidth: ["focus-within", "focus", "hover"],
       extend: {},
     },
-    plugins: [],
+    plugins: [
+      /* require("@tailwindcss/forms") */
+    ],
   },
 };
