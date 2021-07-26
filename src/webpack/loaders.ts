@@ -1,10 +1,16 @@
 import * as webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { resolve } from "path";
 
 export const getTsLoader = () => {
   return {
     test: /\.tsx?$/,
-    exclude: /(node_modules|bower_components)/,
+    //exclude: /(node_modules\/(?!(MY-MODULE|ANOTHER-ONE)\/).*|bower_components)/,
+    //exclude: /(node_modules|bower_components)/,
+    include: [
+      resolve(process.cwd(), "src"),
+      resolve(process.cwd(), "node_modules", "test-npm-lib--ts-types"),
+    ],
     use: {
       loader: "ts-loader",
       /* options: {

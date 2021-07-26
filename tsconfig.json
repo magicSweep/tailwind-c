@@ -19,5 +19,5 @@
     "emitDecoratorMetadata": true,
     "sourceMap": true
   },
-  "include": ["src"]
+  "include": ["src", "node_modules/test-npm-lib--ts-types"]
 }

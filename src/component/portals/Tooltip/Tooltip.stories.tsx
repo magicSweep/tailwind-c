@@ -28,7 +28,7 @@ export const Default = () => {
           onClick={handleClick}
           color="primary"
         >
-          <SearchIcon width={32} height={32} color="white" />
+          <SearchIcon width={32} height={32} className="fill-white" />
         </IconButton>
       </Tooltip>
     </>

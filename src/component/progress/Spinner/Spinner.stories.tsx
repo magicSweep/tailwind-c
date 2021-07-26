@@ -1,7 +1,7 @@
 import React from "react";
 //import { action } from "@storybook/addon-actions";
 import Spinner from ".";
-import Modal from "../../portals/Modal/Modal";
+import Modal from "../../portals/Modal/CenteredModal";
 
 export default {
   component: Spinner,
@@ -29,7 +29,7 @@ export const Default = Template.bind({});
 
 export const Loadable = () => {
   return (
-    <Modal type="slider" onClose={() => {}}>
+    <Modal show={true} type="slider" onClose={() => {}}>
       <Spinner />
     </Modal>
   );

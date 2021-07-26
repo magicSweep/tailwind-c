@@ -1,4 +1,12 @@
 import { merge } from ".";
+//import { button } from "test-npm-lib--ts-types/src/button";
+//import { IIPhoto } from "test-npm-lib--ts-types/src/types";
+
+/* test.only("", () => {
+  let photo: IIPhoto;
+
+  expect(button({ isActive: true })).toEqual("btn");
+}); */
 
 const ourConfig = {
   hello: {

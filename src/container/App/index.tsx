@@ -4,6 +4,8 @@ import { useState } from "react";
 import "./../../styles/index.css";
 import Button from "../../component/buttons/Button";
 
+import { CloseIcon } from "test-npm-lib--ts-types";
+
 const App = () => {
   //const { theme, colorMode }: any = useThemeUI();
 
@@ -20,49 +22,11 @@ const App = () => {
     `}
     >
       <div className="w-screen h-30 p-8 flex flex-wrap flex-auto items-center justify-around">
+        <CloseIcon width={100} height={100} />
+
         <Button size="small" variant="contained">
-          Маленькая кнопка
+          Hello btn
         </Button>
-
-        <Button
-          size="medium"
-          variant="outlined"
-          as="a"
-          href="https://google.com"
-        >
-          Средняя кнопка
-        </Button>
-
-        <Button size="large" variant="text">
-          Огромная кнопка
-        </Button>
-
-        <Button size="large" variant="contained" disabled>
-          Занятая кнопка
-        </Button>
-
-        {/*  <Button
-          startIcon={<PlusIcon width={16} height={16} color="secondary" />}
-          color="secondary"
-          size="medium"
-          variant="text"
-        >
-          Добавить файл
-        </Button>
-
-        <Button
-          endIcon={
-            <ArrowIcon direction="right" width={10} height={10} color="white" />
-          }
-          size="small"
-          variant="contained"
-        >
-          Искать
-        </Button>
-
-        <IconButton color="transparent">
-          <SearchIcon width={32} height={32} color="secondary" />
-        </IconButton> */}
       </div>
     </div>
   );

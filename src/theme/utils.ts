@@ -1,6 +1,8 @@
 import { themes, mapTheme } from "./themes";
 
 export const applyTheme = (theme: ThemeType): void => {
+  if (typeof window === "undefined") return;
+
   const themeObject = mapTheme(themes[theme]);
   if (!themeObject) return;
 

@@ -12,7 +12,7 @@ const config: Config.InitialOptions = {
       "<rootDir>/node_modules/identity-obj-proxy",
   },
 
-  roots: ["<rootDir>/src"],
+  roots: ["<rootDir>/src", "<rootDir>/node_modules/test-npm-lib--ts-types/src"],
 
   //testMatch: ["<rootDir>/src/**/*.test.(js|jsx|ts|tsx)$)"],
 
@@ -24,7 +24,7 @@ const config: Config.InitialOptions = {
   },
 
   transformIgnorePatterns: [
-    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+    "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
 

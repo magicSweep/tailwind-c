@@ -56,14 +56,6 @@ const config = {
   },
 };
 
-describe("merge", () => {
-  test("", () => {
-    const res = merge(config);
-
-    expect(res).toEqual("hello");
-  });
-});
-
 const res = {
   darkMode: false,
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -147,3 +139,11 @@ const res = {
     },
   },
 };
+
+describe("merge", () => {
+  test("", () => {
+    const res = merge(config);
+
+    expect(res).toEqual(res);
+  });
+});
