@@ -41,7 +41,6 @@
     "typescript": "^4.3.5",
     "webpack": "^5.45.1"
   },
-  "dependencies": {},
   "devDependencies": {
     "test-npm-lib--ts-types": "^1.0.64",
     "@babel/core": "^7.14.6",

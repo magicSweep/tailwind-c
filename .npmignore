@@ -3,6 +3,10 @@ node_modules
 jest
 .env
 
+
+src/container/App
+src/component/test
+
 src/**/__snapshots__
 src/**/*.stories.tsx
 src/**/*.test.ts
@@ -12,3 +16,8 @@ src/template.html
 
 src/webpack
 src/stories
+
+postcss.config.js
+tsconfig-for-webpack-config.json
+webpack.config.ts
+webpack.ssr-config.ts
