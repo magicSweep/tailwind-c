@@ -12,4 +12,5 @@ module.exports = {
   releaseDraft: true,
   // Show tasks without actually executing them
   preview: false,
+  "2fa": false,
 };

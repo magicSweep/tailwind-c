@@ -3,6 +3,7 @@ node_modules
 jest
 .env
 
+dist
 
 src/container/App
 src/component/test
@@ -17,6 +18,8 @@ src/template.html
 src/webpack
 src/stories
 
+jest.config.ts
+tsconfig.json
 postcss.config.js
 tsconfig-for-webpack-config.json
 webpack.config.ts

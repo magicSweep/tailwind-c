@@ -4,3 +4,4 @@ package-lock.json
 
 src/**/__snapshots__
 
+dist
