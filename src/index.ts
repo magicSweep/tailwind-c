@@ -13,6 +13,9 @@ export { default as Input } from "./component/formElements/Input";
 export { default as Label } from "./component/formElements/Label";
 export { default as Select } from "./component/formElements/Select";
 export { default as UploadButton } from "./component/formElements/UploadButton";
+export { default as Textarea } from "./component/formElements/Textarea";
+export { default as TagCheckbox } from "./component/formElements/TagCheckbox";
+export { default as FormWrapper } from "./component/formElements/FormWrapper";
 
 export { default as HeroTitle } from "./component/HeroTitle";
 
