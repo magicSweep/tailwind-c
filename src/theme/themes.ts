@@ -1,3 +1,5 @@
+import { Themes, ThemeVars } from "./types";
+
 export const themes: Themes = {
   light: {
     primary: "#1976d2", // "#7986cb", //#303f9f

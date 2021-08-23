@@ -5,14 +5,15 @@ export interface HeroTitleProps {
   tailwindBgColor: string;
   tailwindWidth?: string;
   tailwindTop: string;
+  tailwindShadow: string;
 }
 
 const HeroTitle: FC<HeroTitleProps> = ({
-  isCustom,
   children,
   tailwindBgColor,
   tailwindWidth,
   tailwindTop,
+  tailwindShadow,
 }) => {
   return (
     <div
@@ -23,10 +24,11 @@ const HeroTitle: FC<HeroTitleProps> = ({
     >
       <div
         className={`
-                inline-flex shadow rounded 
-                px-8 py-3
+                inline-flex ${tailwindShadow} rounded 
+                px-8 py-2
                 ${tailwindWidth ? tailwindWidth : ""}
                 ${tailwindBgColor}
+                text-title
             `}
       >
         {children}

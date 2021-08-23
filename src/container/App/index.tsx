@@ -15,8 +15,7 @@ const App = () => {
     <div
       className={`
         lg:container
-        px-8
-        py-8
+       
         bg-paper
         h-screen
     `}
@@ -24,7 +23,7 @@ const App = () => {
       <div className="w-screen h-30 p-8 flex flex-wrap flex-auto items-center justify-around">
         <CloseIcon width={100} height={100} />
 
-        <Button size="small" variant="contained">
+        <Button size="sm" variant="contained">
           Hello btn
         </Button>
       </div>

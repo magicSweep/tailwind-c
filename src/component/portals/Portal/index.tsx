@@ -1,10 +1,4 @@
-import React, {
-  FC,
-  MutableRefObject,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { FC, MutableRefObject, useEffect, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import ErrorBoundary from "../../ErrorBoundary";
 import { usePortal } from "./hook";

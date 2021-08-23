@@ -69,6 +69,9 @@ const config = {
       maxHeight: {
         101: "calc(100% - 32px)",
       },
+      width: {
+        600: "600px",
+      },
     },
     variants: {
       borderColor: ["focus-within", "focus", "hover"],

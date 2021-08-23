@@ -14,8 +14,8 @@ export interface IOption {
 
 export interface SelectProps extends HTMLProps<SelectHTMLAttributes<any>> {
   options: IOption[];
-  error?: boolean;
-  helperText?: string;
+  errors?: string[];
+  helperText?: string[];
   label: any;
 }
 
@@ -31,9 +31,9 @@ const getOptions = (options: IOption[]) => {
   });
 };
 
-const Select: FC<SelectProps> = ({
+export const Select: FC<SelectProps> = ({
   options,
-  error,
+  errors,
   helperText,
   label,
   ...props
@@ -44,7 +44,7 @@ const Select: FC<SelectProps> = ({
     <FieldWrapper
       id={props.id}
       label={label}
-      error={error}
+      errors={errors}
       helperText={helperText}
       disabled={props.disabled}
     >

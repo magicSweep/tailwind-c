@@ -1,14 +1,15 @@
+import React from "react";
 import { Story, Meta } from "@storybook/react";
 
-import BaseField, { FieldProps } from ".";
+import Textarea, { TextareaProps } from ".";
 import FieldWrapper from "../FieldWrapper";
 import Input from "./../Input";
 //import Select from "./../Select/Select";
 import ArrowIcon from "../../icons/ArrowIcon";
 
 export default {
-  title: "Form_Elements/BaseField",
-  component: BaseField,
+  title: "Form_Elements/Textarea",
+  component: Textarea,
   decorators: [
     (story: any) => (
       <div className="w-1/2 m-auto pt-11 bg-paper">{story()}</div>
@@ -29,51 +30,34 @@ export default {
   },
 } as Meta;
 
-const Template: Story<FieldProps> = (args) => <BaseField {...args} />;
+const Template: Story<TextareaProps> = (args) => <Textarea {...args} />;
 
-const defaultProps: FieldProps = {
-  type: "text",
+const defaultProps: TextareaProps = {
   id: "id123",
-  label: "Ваше имя:",
+  label: "Расскажи как это было:",
   //placeholder: "Олимпиада Скуричива",
-  name: "name",
+  name: "desc",
   disabled: false,
   //helperText={"Дерьмовое печенье..."}
 };
 
-export const TextField = Template.bind({});
-TextField.args = {
+export const Default = Template.bind({});
+Default.args = {
   ...defaultProps,
-  placeholder: "Олимпиада Скуричива",
-};
-
-export const PasswordField = Template.bind({});
-PasswordField.args = {
-  ...defaultProps,
-  type: "password",
-  label: "Ваш пароль:",
-  name: "password",
-  placeholder: "************",
-};
-
-export const DateField = Template.bind({});
-DateField.args = {
-  ...defaultProps,
-  type: "date",
-  label: "Дата события:",
-  name: "date",
-  helperText: ["Прекрасная дата"],
+  placeholder: "Жили были дед да баба...",
 };
 
 export const Error = Template.bind({});
 Error.args = {
   ...defaultProps,
-  errors: ["Хреновое имя..."],
+  placeholder: "Жили были дед да баба...",
+  errors: ["Ну расскажи..."],
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...defaultProps,
+  placeholder: "Жили были дед да баба...",
+  errors: ["Ну расскажи..."],
   disabled: true,
-  errors: ["Хреновое имя..."],
 };

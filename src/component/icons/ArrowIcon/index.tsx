@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import BaseIcon, { IconProps } from "./../BaseIcon";
 //import styles from "./../../../styles/classes.module.scss";
 //import classes from "./ArrowIcon.module.scss";

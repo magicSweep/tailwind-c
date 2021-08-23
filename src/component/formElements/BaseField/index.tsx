@@ -5,8 +5,8 @@ import FieldWrapper from "../FieldWrapper";
 export interface FieldProps extends HTMLProps<InputHTMLAttributes<any>> {
   label: any;
   //fRef: any;
-  error?: boolean;
-  helperText?: string;
+  errors?: string[];
+  helperText?: string[];
 }
 
 const BaseField: FC<FieldProps> = ({
@@ -16,7 +16,7 @@ const BaseField: FC<FieldProps> = ({
   placeholder,
   name,
   //fRef,
-  error,
+  errors,
   helperText,
   disabled,
 }) => {
@@ -24,7 +24,7 @@ const BaseField: FC<FieldProps> = ({
     <FieldWrapper
       id={id}
       label={label}
-      error={error}
+      errors={errors}
       helperText={helperText}
       disabled={disabled}
     >

@@ -1,6 +1,6 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Story, Meta } from "@storybook/react";
-import Select /* { IButtonProps } */ from ".";
+import Select, { SelectProps } from ".";
 
 export default {
   title: "Form_Elements/Select",
@@ -40,7 +40,7 @@ const options = [
   { value: "3", label: "Вода" },
 ];
 
-const Template: Story<any> = (args) => {
+const Template: Story<SelectProps> = (args) => {
   const [index, setIndex] = useState("2");
 
   const onChange = (event: any) => {
@@ -61,8 +61,30 @@ Default.args = {
   label: "Вы откуда?:",
   placeholder: "Make some stuff",
   name: "fuck",
-  error: false,
-  helperText: "",
+  errors: [],
+  helperText: [],
+  disabled: false,
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  id: "123id",
+  label: "Вы откуда?:",
+  placeholder: "Make some stuff",
+  name: "fuck",
+  errors: ["What is that?..", "HAAhh?"],
+  helperText: [],
+  disabled: false,
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  id: "123id",
+  label: "Вы откуда?:",
+  placeholder: "Make some stuff",
+  name: "fuck",
+  errors: [],
+  helperText: ["Very well.", "Not bad"],
   disabled: false,
 };
 
@@ -72,7 +94,7 @@ Disabled.args = {
   label: "Вы откуда?:",
   placeholder: "Make some stuff",
   name: "fuck",
-  error: false,
-  helperText: "",
+  errors: ["What is that?..", "HAAhh?"],
+  helperText: ["Very well.", "Not bad"],
   disabled: true,
 };

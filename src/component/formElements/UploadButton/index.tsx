@@ -1,4 +1,4 @@
-import React, {
+import {
   FC,
   InputHTMLAttributes,
   MutableRefObject,
@@ -12,30 +12,32 @@ import PlusIcon from "../../icons/PlusIcon";
 export interface IUploadButtonProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "color" | "size">,
     PureButtonProps {
-  fileList?: FileList;
-  error?: boolean;
-  helperText?: string;
+  //fileList?: FileList;
+  errors?: string[];
+  helperText?: string[];
   label?: string;
 }
 
 const UploadButton: FC<IUploadButtonProps> = ({
   id,
   label,
-  fileList,
+  //fileList,
   name,
-  error,
+  errors,
   helperText,
   disabled,
   ...props
 }) => {
-  let fHelperText = helperText;
+  /* let fHelperText = helperText;
 
-  if (!error && fileList && fileList.length > 0) {
+  if (!errors && fileList && fileList.length > 0) {
     if (fileList.length > 1) {
       throw new Error(`Multiple files not implemented`);
     }
     fHelperText = `Вы добавили файл - ${fileList[0].name}`;
-  }
+  } */
+
+  const isError = errors && errors.length > 0;
 
   return (
     <div className="flex justify-start items-start flex-col">
@@ -54,13 +56,13 @@ const UploadButton: FC<IUploadButtonProps> = ({
             width={16}
             height={16}
             className={`fill-${
-              disabled ? "disabled" : error ? "error" : "primary"
+              disabled ? "disabled" : isError ? "error" : "primary"
             }`}
           />
         }
-        color={error ? "error" : "primary"}
-        size="medium"
-        variant="text"
+        color={isError ? "error" : "primary"}
+        size="sm"
+        variant="outlined"
         disabled={disabled}
         htmlFor={id}
         as="label"
@@ -69,14 +71,9 @@ const UploadButton: FC<IUploadButtonProps> = ({
       </Button>
 
       <HelperText
-        className={`
-            text-xs tracking-normal
-            text-${disabled ? "disabled" : error ? "error" : "success"}
-            pl-1
-        `}
-      >
-        {fHelperText}
-      </HelperText>
+        type={disabled ? "disabled" : isError ? "error" : "success"}
+        messages={isError ? errors : helperText}
+      />
     </div>
   );
 };

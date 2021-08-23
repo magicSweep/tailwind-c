@@ -1,4 +1,4 @@
-import React from "react";
+import { Component } from "react";
 //import Alert from "../Alert/Alert";
 import Portal from "../portals/Portal";
 //import classes from "./ErrorBoundary.module.scss";
@@ -11,7 +11,7 @@ import Portal from "../portals/Portal";
     
 } */
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   state: { hasError: boolean; error?: Error } = { hasError: false };
 
   static getDerivedStateFromError(error: Error) {

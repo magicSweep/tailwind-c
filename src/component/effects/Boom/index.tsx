@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useMouseDown } from "../hook";
 
 export default () => {

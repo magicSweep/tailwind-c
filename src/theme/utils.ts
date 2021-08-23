@@ -1,4 +1,5 @@
 import { themes, mapTheme } from "./themes";
+import { ThemeType } from "./types";
 
 export const applyTheme = (theme: ThemeType): void => {
   if (typeof window === "undefined") return;

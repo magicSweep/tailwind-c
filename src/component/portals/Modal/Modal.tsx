@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import { FC, useEffect } from "react";
 //import classes from "./Modal.module.scss";
 //import styles from "./../../styles/classes.module.scss";
 //import CloseButton from "../CloseButton";
@@ -56,12 +56,11 @@ export const ModalWidget: FC<ModalProps> = ({ onClose, type, children }) => {
 
   return (
     <div
+      // max-w-101 max-h-101 text-left bg-paper
       className={`
             shadow-lg rounded-sm
-            bg-paper
             box-border
             relative
-            text-left
             overflow-y-auto
             flex items-stretch flex-col flex-nowrap
             outline-none
@@ -69,16 +68,17 @@ export const ModalWidget: FC<ModalProps> = ({ onClose, type, children }) => {
             max-w-101 max-h-101
         `}
     >
-      <div
+      {children}
+      {/*  <div
         className={`
             relative
             overflow-y-auto
             flex-grow
-            flex justify-center items-center flex-col
+            flex justify-center items-center flex-wrap
         `}
       >
         {children}
-      </div>
+      </div> */}
     </div>
   );
 };

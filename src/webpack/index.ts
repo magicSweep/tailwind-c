@@ -140,12 +140,28 @@ class Webpack {
 
       //@ts-ignore
       config.devServer = {
-        contentBase: this.pathToOutputDir,
+        //contentBase: this.pathToOutputDir,
+        static: {
+          directory: this.pathToOutputDir,
+          staticOptions: {},
+          // Don't be confused with `devMiddleware.publicPath`, it is `publicPath` for static directory
+          // Can be:
+          // publicPath: ['/static-public-path-one/', '/static-public-path-two/'],
+          publicPath: "/",
+          // Can be:
+          // serveIndex: {} (options for the `serveIndex` option you can find https://github.com/expressjs/serve-index)
+          serveIndex: true,
+          // Can be:
+          // watch: {} (options for the `watch` option you can find https://github.com/paulmillr/chokidar)
+          watch: false,
+        },
         open: true,
         compress: true,
         hot: true,
         //compress: true,
-        //port: 80
+        // host: "0.0.0.0" - If you want your server to be accessible externally
+        host: "local-ip",
+        port: "auto",
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods":

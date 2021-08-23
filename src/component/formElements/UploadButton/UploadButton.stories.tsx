@@ -35,23 +35,24 @@ Default.args = {
   ...defaultProps,
 };
 
-export const Success = Template.bind({});
-Success.args = {
-  ...defaultProps,
-  fileList: [{ name: "super.jpg" }] as any,
-};
-
 export const Error = Template.bind({});
 Error.args = {
   ...defaultProps,
-  error: true,
-  helperText: "А где фота?",
+  errors: ["А где фота?"],
+  helperText: [],
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  ...defaultProps,
+  errors: [],
+  helperText: ["А, слушай, молодец."],
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
   ...defaultProps,
   disabled: true,
-  error: true,
-  helperText: "А где фота?",
+  errors: ["А где фота?"],
+  helperText: ["А где фота?"],
 };

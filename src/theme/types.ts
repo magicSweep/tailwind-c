@@ -1,6 +1,6 @@
-type ThemeType = "dark" | "light";
+export type ThemeType = "dark" | "light";
 
-interface ThemeVars {
+export interface ThemeVars {
   primary: string;
   secondary: string;
   paper: string;
@@ -14,7 +14,7 @@ interface ThemeVars {
   success: string;
 }
 
-interface Themes {
+export interface Themes {
   dark: ThemeVars;
   light: ThemeVars;
 }

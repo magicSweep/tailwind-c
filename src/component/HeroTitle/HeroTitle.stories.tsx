@@ -17,7 +17,9 @@ const Template: Story<HeroTitleProps> = (args) => (
       className="relative w-96 h-96 shadow"
       /*  position="relative" width="400px" height="500px" boxShadow={1} */
     >
-      <HeroTitle {...args}>Welcome, friend...</HeroTitle>
+      <HeroTitle {...args}>
+        <h5 className="text-title">Welcome, friend...</h5>
+      </HeroTitle>
     </div>
   </div>
 );
@@ -26,6 +28,7 @@ export const Default = Template.bind({});
 Default.args = {
   tailwindTop: "-top-6",
   tailwindBgColor: "bg-paper",
+  tailwindShadow: "shadow",
   //boxShadow: 1,
   //padding: "10px 20px",
 

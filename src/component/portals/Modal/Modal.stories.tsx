@@ -22,57 +22,6 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-/*  <CSSTransition
-              key={id as any}
-              timeout={500}
-              classNames={{
-                enter: "opacity-0",
-                enterActive: "opacity-100 transition-opacity duration-1000",
-                exit: "opacity-0 transition-opacity duration-1000",
-                //exitActive: "exit-active",
-                //exitActive: "opacity-0",
-                /*    enter: "enter",
-              enterActive: "enter-active",
-              exit: "exit",
-              exitActive: "exit-active", /
-            }}
-            > */
-
-/* const Template: Story<ModalProps> = (args) => {
-  const [show, setShow] = useState(false);
-
-  console.log("[RENDER MODAL TEMPLATE]", args);
-
-  return (
-    <div>
-      <button onClick={() => setShow(true)}>Show modal</button>
-      <div style={{ height: "120vh" }}></div>
-      <CSSTransition
-        in={show}
-        timeout={500}
-        unmountOnExit
-        classNames={{
-          /*   enter: "opacity-0 transform translate-y-full",
-          enterActive:
-            "opacity-100 transform translate-y-0 transition-all duration-1000",
-          exit:
-            "opacity-0 transform translate-y-full transition-all duration-1000",
-          exitActive: "exit-active", /
-          //exitActive: "opacity-0",
-          enter: "modal--enter",
-          enterActive: "modal--enter-active",
-          exit: "modal--exit",
-          exitActive: "modal--exit-active",
-        }}
-      >
-        <Modal onClose={() => setShow(false)} type={args.type}>
-          {args.children}
-        </Modal>
-      </CSSTransition>
-    </div>
-  );
-}; */
-
 const Template: Story<ModalProps> = (args) => {
   const [show, setShow] = useState(false);
 
@@ -80,7 +29,7 @@ const Template: Story<ModalProps> = (args) => {
 
   return (
     <div>
-      <button onClick={() => setShow(true)}>Show modal</button>
+      <Button onClick={() => setShow(true)}>Show modal</Button>
       <div style={{ height: "120vh" }}></div>
 
       <CenteredModal
@@ -88,10 +37,18 @@ const Template: Story<ModalProps> = (args) => {
         onClose={() => setShow(false)}
         type={args.type}
       >
-        <>
+        <div
+          className={`
+            relative
+            overflow-y-auto
+            flex-grow
+            flex justify-center items-center flex-wrap
+            bg-paper
+        `}
+        >
           {args.children}
-          <button onClick={() => setShow(false)}>Hide modal</button>
-        </>
+          <Button onClick={() => setShow(false)}>Hide modal</Button>
+        </div>
       </CenteredModal>
     </div>
   );
@@ -274,63 +231,3 @@ export function TodoList() {
     </div>
   );
 }
-
-/* export const Example = () => {
-  const [state, setState] = useState({
-    items: ["hello", "world", "click", "me"],
-  });
-
-  const handleAdd = () => {
-    const newItems = state.items.concat([prompt("Enter some text") as any]);
-    setState({ items: newItems });
-  };
-
-  const handleRemove = (i: any) => {
-    let newItems = state.items.slice();
-    newItems.splice(i, 1);
-    setState({ items: newItems });
-  };
-
-  const items = state.items.map((item, i) => {
-    return (
-      <CSSTransition
-        timeout={400}
-        unmountOnExit
-        classNames={{
-          enter: "opacity-0",
-          enterActive: "opacity-100",
-          exit: "opacity-100",
-          exitActive: "opacity-0",
-        }}
-      >
-        <div key={i} onClick={() => handleRemove(i)}>
-          {item}
-        </div>
-      </CSSTransition>
-    );
-  });
-
-  return (
-    <div>
-      <Button onClick={handleAdd}>Add item</Button>
-      <TransitionGroup component="div">{items}</TransitionGroup>
-    </div>
-  );
-}; */
-
-/* 
-<CSSTransition
-  in={this.state.showList}
-  timeout={400}
-  classNames="list-transition"
-  unmountOnExit
-  classNames={{
-  enter: classes.listTransitionEnter,
-  enterActive:
-  classes.listTransitionEnterActive,
-  exit: classes.listTransitionExit,
-  exitActive:
-  classes.listTransitionExitActive,
-  }}
->
-*/

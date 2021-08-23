@@ -1,5 +1,4 @@
-import React from "react";
-
+import { Colors } from "./../../../types";
 import BaseButton, { BaseButtonProps } from "../BaseButton";
 
 export interface IconButtonProps extends BaseButtonProps {

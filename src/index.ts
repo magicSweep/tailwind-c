@@ -26,6 +26,8 @@ export { default as SearchIcon } from "./component/icons/SearchIcon";
 export { default as SuccessIcon } from "./component/icons/SuccessIcon";
 export { default as WarningIcon } from "./component/icons/WarningIcon";
 
+export { default as Tag } from "./component/Tag";
+
 export { default as Alert } from "./component/portals/Alert";
 export { default as ContextMenu } from "./component/portals/ContextMenu";
 export { default as CenteredModal } from "./component/portals/Modal/CenteredModal";
@@ -48,5 +50,3 @@ export { default as Scale } from "./component/transitions/Scale";
 export { default as ThemeProvider } from "./theme/ThemeProvider";
 export { ThemeContext } from "./theme/ThemeProvider/ThemeContext";
 export { merge } from "./theme/merge";
-
-export { useForm } from "./form/useForm";

@@ -26,15 +26,15 @@ export interface IWrapperProps {
   disabled?: boolean;
   label: any;
   //fRef: any;
-  error?: boolean;
-  helperText?: string;
+  errors?: string[];
+  helperText?: string[];
   children?: any;
 }
 
 const FieldWrapper: FC<IWrapperProps> = ({
   id,
   label,
-  error,
+  errors,
   helperText,
   disabled,
   children,
@@ -44,6 +44,8 @@ const FieldWrapper: FC<IWrapperProps> = ({
   /* focus:border-${
                 disabled ? "disabled" : error ? "error" : "primary"
               } */
+  const isError = errors && errors.length > 0;
+
   return (
     <div>
       <div
@@ -52,21 +54,21 @@ const FieldWrapper: FC<IWrapperProps> = ({
               w-full
               flex flex-wrap
               hover:border-${
-                disabled ? "disabled" : error ? "error" : "primary"
+                disabled ? "disabled" : isError ? "error" : "primary"
               }
               focus-within:border-${
-                disabled ? "disabled" : error ? "error" : "primary"
+                disabled ? "disabled" : isError ? "error" : "primary"
               }
               focus-within:border-b-2
               border-b
-              border-${disabled ? "disabled" : error ? "error" : "body"}
+              border-${disabled ? "disabled" : isError ? "error" : "body"}
           `}
       >
         <Label
           htmlFor={id}
           className={`
-            text-base
-            text-${disabled ? "disabled" : error ? "error" : "title"}
+            text-sm
+            text-${disabled ? "disabled" : isError ? "error" : "body"}
             pl-4 py-1 mr-2
         `}
         >
@@ -76,14 +78,14 @@ const FieldWrapper: FC<IWrapperProps> = ({
       </div>
 
       <HelperText
-        className={`
+        /* className={`
             text-xs tracking-normal
-            text-${disabled ? "disabled" : error ? "error" : "success"}
+            text-${disabled ? "disabled" : isError ? "error" : "success"}
             pl-1
-        `}
-      >
-        {helperText}
-      </HelperText>
+        `} */
+        type={disabled ? "disabled" : isError ? "error" : "success"}
+        messages={isError ? errors : helperText}
+      />
     </div>
   );
 };

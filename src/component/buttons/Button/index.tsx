@@ -1,10 +1,9 @@
-import React from "react";
-
+import { Colors, Sizes } from "./../../../types";
 import BaseButton, { BaseButtonProps } from "../BaseButton";
 
 export interface PureButtonProps {
   color?: Colors;
-  size?: "small" | "medium" | "large";
+  size?: Sizes;
   variant?: "contained" | "text" | "outlined";
   startIcon?: JSX.Element;
   endIcon?: JSX.Element;
@@ -12,13 +11,15 @@ export interface PureButtonProps {
 
 export interface ButtonProps extends BaseButtonProps, PureButtonProps {}
 
-const getSizeClasses = (size: "small" | "medium" | "large") => {
+const getSizeClasses = (size: Sizes) => {
   switch (size) {
-    case "small":
+    case "xs":
       return "text-xs px-3 py-2";
-    case "medium":
+    case "sm":
       return "text-sm px-3 py-2";
-    case "large":
+    case "lg":
+      return "text-base px-5 py-2";
+    case "xl":
       return "text-base px-5 py-2";
 
     default:
@@ -58,7 +59,7 @@ const getVariantAndColorClasses = (
 
 export default ({
   children,
-  size = "small",
+  size = "xs",
   variant = "text",
   color = "primary",
   startIcon,

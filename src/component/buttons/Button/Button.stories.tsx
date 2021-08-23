@@ -1,4 +1,3 @@
-import React from "react";
 import { Story, ComponentMeta } from "@storybook/react";
 
 import Button, { ButtonProps } from ".";
@@ -26,10 +25,12 @@ export const Variants = () => {
       <Button color="secondary" variant="contained">
         Contained кнопка
       </Button>
-      <Button color="secondary" variant="outlined">
+      <Button color="secondary" size="sm" variant="outlined">
         outlined кнопка
       </Button>
-      <Button variant="text">text кнопка</Button>
+      <Button variant="text" size="lg">
+        text кнопка
+      </Button>
     </>
   );
 };
@@ -42,7 +43,7 @@ export const WithIcons = () => {
           <PlusIcon width={16} height={16} className={`fill-secondary`} />
         }
         color="secondary"
-        size="medium"
+        size="lg"
         variant="text"
       >
         Добавить файл
@@ -57,7 +58,7 @@ export const WithIcons = () => {
             className={`fill-white`}
           />
         }
-        size="small"
+        size="xs"
         variant="contained"
       >
         Вперед
@@ -76,7 +77,7 @@ export const WithIcons = () => {
           />
         }
         color="secondary"
-        size="medium"
+        size="sm"
         variant="outlined"
       >
         Добавить какой-то из файлов
@@ -110,7 +111,7 @@ export const Disabled = () => {
           />
         }
         color="secondary"
-        size="medium"
+        size="lg"
         variant="outlined"
         disabled
       >
