@@ -2,7 +2,7 @@
   "name": "tailwind-c",
   "version": "0.2.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "node ./node_modules/.bin/jest",
     "tsc": "node ./node_modules/.bin/tsc",
