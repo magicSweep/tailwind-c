@@ -1,8 +1,8 @@
 import { FC, HTMLProps, InputHTMLAttributes } from "react";
-import Input from "../Input";
+import Input, { InputProps } from "../Input";
 import FieldWrapper from "../FieldWrapper";
 
-export interface FieldProps extends HTMLProps<InputHTMLAttributes<any>> {
+export interface FieldProps extends InputProps {
   label: any;
   //fRef: any;
   errors?: string[];
@@ -19,6 +19,7 @@ const BaseField: FC<FieldProps> = ({
   errors,
   helperText,
   disabled,
+  ...props
 }) => {
   return (
     <FieldWrapper
@@ -35,6 +36,7 @@ const BaseField: FC<FieldProps> = ({
         name={name}
         disabled={disabled}
         className={`px-2`}
+        {...props}
       />
     </FieldWrapper>
   );

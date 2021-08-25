@@ -16,6 +16,7 @@ export interface IUploadButtonProps
   errors?: string[];
   helperText?: string[];
   label?: string;
+  onChange?: (event?: any) => void;
 }
 
 const UploadButton: FC<IUploadButtonProps> = ({
@@ -26,7 +27,7 @@ const UploadButton: FC<IUploadButtonProps> = ({
   errors,
   helperText,
   disabled,
-  ...props
+  onChange,
 }) => {
   /* let fHelperText = helperText;
 
@@ -48,6 +49,7 @@ const UploadButton: FC<IUploadButtonProps> = ({
         type="file"
         disabled={disabled}
         className="hidden"
+        onChange={onChange}
       />
 
       <Button

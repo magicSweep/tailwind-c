@@ -28,7 +28,7 @@ const ElementWrapper = ({ children, index, className }: any) => (
   </div>
 );
 
-const AddEditPhotoFormWidget: FC<AddEditPhotoFormWidgetProps> = ({
+const ExampleForm: FC<AddEditPhotoFormWidgetProps> = ({
   title,
   onSubmit,
   onClose,
@@ -84,6 +84,20 @@ const AddEditPhotoFormWidget: FC<AddEditPhotoFormWidgetProps> = ({
           />
         </ElementWrapper>
 
+        <ElementWrapper className="mb-4">
+          <BaseField
+            id="date_id123"
+            type="password"
+            label="Ваш пароль:"
+            name="password"
+            placeholder="************"
+            value={formState.password}
+            errors={formErrors.password}
+            disabled={uploadLoading === true}
+            onChange={onChange}
+          />
+        </ElementWrapper>
+
         <ElementWrapper>
           <Textarea
             id="desc_id123"
@@ -106,4 +120,4 @@ const AddEditPhotoFormWidget: FC<AddEditPhotoFormWidgetProps> = ({
   );
 };
 
-export default AddEditPhotoFormWidget;
+export default ExampleForm;

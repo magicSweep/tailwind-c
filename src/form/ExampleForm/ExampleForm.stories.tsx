@@ -25,7 +25,10 @@ const Template: Story<AddEditPhotoFormWidgetProps> = (args) => (
 
 const defaultProps = {
   title: "Добавьте новое фото",
-  onSubmit: () => console.log("Submit"),
+  onSubmit: (event: any) => {
+    event.preventDefault();
+    console.log("Submit");
+  },
   onChange: () => console.log("onChange"),
   onClose: () => console.log("onClose"),
   uploadLoading: false,
@@ -33,6 +36,8 @@ const defaultProps = {
   formState: {
     date: "",
     desc: "",
+    photoFile: null,
+    password: "",
   },
 };
 
