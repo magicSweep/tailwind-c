@@ -1,5 +1,9 @@
 # React base components styled with Tailwind
 
+## Build
+
+- /src/theme/merge - files for tailwind config it must be es5 compatible, that's why it compiles separate of main compilation and then copy to dist folder
+
 ## Usage
 
 - we need project ready to use react and tailwind

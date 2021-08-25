@@ -1,23 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.merge = exports.mergeDeep = exports.applyTheme = void 0;
-var themes_1 = require("./themes");
-var applyTheme = function (theme) {
-    if (typeof window === "undefined")
-        return;
-    var themeObject = themes_1.mapTheme(themes_1.themes[theme]);
-    if (!themeObject)
-        return;
-    var root = document.documentElement;
-    Object.keys(themeObject).forEach(function (property) {
-        if (property === "name") {
-            return;
-        }
-        //@ts-ignore
-        root.style.setProperty(property, themeObject[property]);
-    });
-};
-exports.applyTheme = applyTheme;
+exports.merge = exports.mergeDeep = void 0;
 function mergeDeep(target, source) {
     var isObject = function (obj) { return obj && typeof obj === "object"; };
     if (!isObject(target) || !isObject(source)) {
@@ -63,12 +46,12 @@ function merge(ourConfig, mainConfig, currKey) {
                 ourConfig[key] = merge(Object.assign({}, ourConfigValue), mainConfigValue, key);
         }
         /*  if (Array.isArray(ourConfigValue) && Array.isArray(mainConfigValue)) {
-            ourConfig[key] = ourConfigValue.concat(mainConfigValue);
-          } else if (isObject(ourConfigValue) && isObject(mainConfigValue)) {
-            ourConfig[key] = mergeDeep(Object.assign({}, ourConfigValue), mainConfigValue);
-          } else {
-            ourConfig[key] = mainConfigValue;
-          } */
+              ourConfig[key] = ourConfigValue.concat(mainConfigValue);
+            } else if (isObject(ourConfigValue) && isObject(mainConfigValue)) {
+              ourConfig[key] = mergeDeep(Object.assign({}, ourConfigValue), mainConfigValue);
+            } else {
+              ourConfig[key] = mainConfigValue;
+            } */
     });
     keys = [];
     return ourConfig;

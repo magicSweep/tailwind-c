@@ -52,4 +52,3 @@ export { default as Scale } from "./component/transitions/Scale";
 
 export { default as ThemeProvider } from "./theme/ThemeProvider";
 export { ThemeContext } from "./theme/ThemeProvider/ThemeContext";
-export { merge } from "./theme/merge";
