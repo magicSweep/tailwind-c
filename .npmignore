@@ -3,18 +3,9 @@ node_modules
 jest
 .env
 
-src/container/App
-src/component/test
+src
 
-src/**/__snapshots__
-src/**/*.stories.tsx
-src/**/*.test.ts
-
-src/index.tsx
-src/template.html
-
-src/webpack
-src/stories
+.np-config.js
 
 jest.config.ts
 tsconfig.json
