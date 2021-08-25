@@ -12,7 +12,9 @@
     "start": "cross-env NODE_ENV=\"development NODE\" TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "release": "np --branch=main --yolo --no-yarn --no-2fa"
+    "release": "np --branch=main --yolo --no-yarn --no-2fa",
+    "build:lib": "cross-env NODE_ENV=\"production\" rm -rf dist && tsc --project tsconfig.lib.json && npm run copy:files",
+    "copy:files": "copyfiles tailwind.config.js dist && copyfiles -f src/styles/** dist/styles"
   },
   "keywords": [],
   "author": "",
@@ -43,7 +45,6 @@
     "webpack": "^5.51.1"
   },
   "devDependencies": {
-    "test-npm-lib--ts-types": "^1.0.64",
     "@babel/core": "^7.14.6",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
@@ -73,6 +74,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "compression-webpack-plugin": "^8.0.1",
     "copy-webpack-plugin": "^9.0.1",
+    "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.1.0",
     "file-loader": "^6.2.0",
@@ -92,6 +94,7 @@
     "style-loader": "^3.1.0",
     "tailwindcss": "^2.2.4",
     "terser-webpack-plugin": "^5.1.4",
+    "test-npm-lib--ts-types": "^1.0.64",
     "ts-jest": "^27.0.4",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.1.0",
