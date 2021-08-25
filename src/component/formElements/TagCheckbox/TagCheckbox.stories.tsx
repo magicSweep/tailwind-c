@@ -31,8 +31,10 @@ Default.args = {
   color: "secondary",
   id: "checkbox1234",
   checked: false,
-  onChange: (event: any) => console.log("change"),
-  name: "checkbox-input",
+  onChange: (event: any) =>
+    console.log("change", event.target.value, event.target.checked),
+  name: "tags",
+  value: "checkbox1234",
   disabled: false,
 };
 

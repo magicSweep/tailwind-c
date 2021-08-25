@@ -14,7 +14,7 @@ export interface TagCheckboxProps
 
 const TagCheckbox: FC<TagCheckboxProps> = ({ color, children, ...props }) => {
   return (
-    <div
+    <label
       className={`
             cursor-${props.disabled ? "default" : "pointer"}
             relative inline-block 
@@ -22,26 +22,23 @@ const TagCheckbox: FC<TagCheckboxProps> = ({ color, children, ...props }) => {
             overflow-hidden
         `}
     >
-      {!props.disabled && <BoomEffect />}
-      <Tag
-        color={props.disabled || !props.checked ? "disabled" : color}
-        htmlFor={props.id}
-        as="label"
-      >
+      <Tag color={props.disabled || !props.checked ? "disabled" : color}>
         {children}
       </Tag>
 
       <input
         className="hidden"
         //id={id}
-        type={"checkbox"}
+        type="checkbox"
         //onChange={onChange}
         //name={name}
         //checked={checked}
         //disabled={props.disabled}
         {...props}
       />
-    </div>
+
+      {!props.disabled && <BoomEffect />}
+    </label>
   );
 };
 

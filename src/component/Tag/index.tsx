@@ -16,7 +16,7 @@ export interface TagProps extends Omit<BaseTagProps, "className"> {
 export type TagType = "where" | "withWho" | "feeling";
 
 const BaseTag = (props: BaseTagProps) =>
-  createElement(props.as ? props.as : "div", props);
+  createElement(props.as ? props.as : "span", props);
 
 const Tag: FC<TagProps> = ({ color, children, ...props }) => {
   //const tagColor = tagTypeToColor(tagType);

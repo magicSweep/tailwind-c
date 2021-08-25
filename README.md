@@ -4,6 +4,8 @@
 
 - /src/theme/merge - files for tailwind config it must be es5 compatible, that's why it compiles separate of main compilation and then copy to dist folder
 
+- for publish first run $ npm run build:lib then $ npm run release
+
 ## Usage
 
 - we need project ready to use react and tailwind
