@@ -33,6 +33,7 @@ const FormWrapper: FC<FormWrapperProps> = ({
             bg-paper
         `}
       {...props}
+      onSubmit={onSubmit}
     >
       <HeroTitle
         tailwindTop="-top-6"
