@@ -1,5 +1,6 @@
 import { useRef, useEffect, MutableRefObject } from "react";
 import PortalController from "./controller";
+import { ModalType } from "./types";
 
 const modalRoot = document.getElementById("modal");
 const alertRoot = document.getElementById("alert");

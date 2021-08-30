@@ -26,7 +26,7 @@ const Snackbar = ({ show, onClose, children }: any) => {
   return (
     <>
       <Fade show={show}>
-        <Portal type="context-menu">
+        <Portal type="alert">
           <div
             className={`
                 fixed 

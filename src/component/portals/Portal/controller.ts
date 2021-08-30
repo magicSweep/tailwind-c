@@ -1,3 +1,4 @@
+import { ModalType } from "./../../portals/Portal/types";
 //const modalRoot = document.getElementById('modal');
 //const alertRoot = document.getElementById('alert');
 
