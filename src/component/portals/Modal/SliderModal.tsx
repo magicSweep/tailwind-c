@@ -19,7 +19,7 @@ export const ModalWrapper = ({ children }: any) => (
 );
 
 const Modal: FC<{ show: boolean; children: any }> = ({ show, children }) => {
-  console.log("[RENDER MODAL]");
+  //console.log("[RENDER MODAL]");
 
   //if (!elementRef.current) return null;
 

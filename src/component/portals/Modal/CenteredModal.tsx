@@ -12,7 +12,7 @@ const Modal: FC<ModalProps & { show: boolean }> = ({
   type,
   children,
 }) => {
-  console.log("[RENDER MODAL]", children);
+  //console.log("[RENDER MODAL]", children);
 
   //if (!elementRef.current) return null;
 

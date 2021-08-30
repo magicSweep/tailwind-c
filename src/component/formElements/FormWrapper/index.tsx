@@ -34,6 +34,7 @@ const FormWrapper: FC<FormWrapperProps> = ({
         `}
       {...props}
       onSubmit={onSubmit}
+      onClick={(event: any) => event.stopPropagation()}
     >
       <HeroTitle
         tailwindTop="-top-6"
@@ -43,7 +44,14 @@ const FormWrapper: FC<FormWrapperProps> = ({
       >
         <div className="flex justify-between items-center text-white w-full">
           <h3 className="flex-grow text-center">{title}</h3>
-          <IconButton color="transparent">
+          <IconButton
+            type="button"
+            onClick={(event: any) => {
+              event.stopPropagation();
+              onClose();
+            }}
+            color="transparent"
+          >
             <CloseIcon width={20} height={20} className="fill-white" />
           </IconButton>
         </div>

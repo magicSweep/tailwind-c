@@ -9,7 +9,7 @@ import { PortalProps } from "./types";
 const Portal: FC<PortalProps> = ({ children, type }) => {
   const element = usePortal(type);
 
-  console.log("[RENDER PORTAL]");
+  //console.log("[RENDER PORTAL]");
 
   //if (!elementRef.current) return null;
 

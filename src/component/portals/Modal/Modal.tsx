@@ -48,7 +48,7 @@ export const ModalWidget: FC<ModalProps> = ({ onClose, type, children }) => {
   if (type === "form") wrapperClass = classes.wrapperForm;
   else if (type === "slider") wrapperClass = classes.wrapperSlider; */
 
-  console.log("[RENDER MODAL]", type);
+  //console.log("[RENDER MODAL]", type);
 
   /* if (type === "slider") {
     return <ModalWrapper onClose={onClose}>{children}</ModalWrapper>;
