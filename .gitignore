@@ -1,6 +1,9 @@
 .env
 node_modules
 
+src/static
+
 src/**/__snapshots__
 
 dist
+

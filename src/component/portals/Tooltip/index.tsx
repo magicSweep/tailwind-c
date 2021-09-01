@@ -55,7 +55,9 @@ const Tooltip = ({ text, children }: any) => {
   //const anchorRef: MutableRefObject<any> = useRef();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  let position: IPosition = {};
+  const positionRef: MutableRefObject<IPosition> = useRef({});
+
+  //let position: IPosition = {};
 
   const onMouseEnter = (event: any) => {
     console.log("ON MOUSE ENTER");
@@ -73,11 +75,12 @@ const Tooltip = ({ text, children }: any) => {
     onMouseLeave
   );
 
-  if (anchorEl) position = getPosition(anchorEl);
+  //if (anchorEl) position = getPosition(anchorEl);
+  if (anchorEl) positionRef.current = getPosition(anchorEl);
 
   const show = Boolean(anchorEl);
 
-  //console.log("TOOLTIP RENDER", show, position, anchorEl);
+  console.log("TOOLTIP RENDER", show, positionRef.current, anchorEl);
 
   return (
     <>
@@ -95,7 +98,7 @@ const Tooltip = ({ text, children }: any) => {
               outline-none 
               flex justify-center items-center
             `}
-            style={position}
+            style={positionRef.current}
             role="tooltip"
           >
             <span className="text-gray-100 text-xs py-1 px-2">{text}</span>

@@ -20,7 +20,7 @@ export default ({
           ${colorClasses}
           ${paddingClasses}
           rounded-full
-          text-xs
+          leading-3
     `}
       {...props}
     >

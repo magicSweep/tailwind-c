@@ -30,7 +30,7 @@ export const ModalWrapper = ({ children, onClick }: any) => (
 export const BackDrop = ({ onClose }: any) => (
   <div
     className={`
-        absolute inset-0
+        fixed inset-0
         bg-gray-700 bg-opacity-40
     `}
     onClick={onClose}

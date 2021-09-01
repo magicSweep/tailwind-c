@@ -1,7 +1,6 @@
 import { FC } from "react";
 import Portal from "../Portal";
 import { ModalProps, BackDrop, ModalWidget, ModalWrapper } from "./Modal";
-import { CSSTransition } from "react-transition-group"; // ES6
 import Fade from "./../../transitions/Fade";
 
 import Move from "./../../transitions/Move";

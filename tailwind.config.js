@@ -65,12 +65,17 @@ const config = {
       },
       maxWidth: {
         101: "calc(100% - 32px)",
+        345: "345px",
       },
       maxHeight: {
         101: "calc(100% - 32px)",
       },
       width: {
+        345: "345px",
         600: "600px",
+      },
+      height: {
+        194: "194px",
       },
     },
     variants: {
