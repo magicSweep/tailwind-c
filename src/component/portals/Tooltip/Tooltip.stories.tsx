@@ -21,6 +21,7 @@ export const Default = () => {
 
   return (
     <>
+      <div style={{ height: "50vh" }}></div>
       <Tooltip text="Поиск фото">
         <IconButton
           aria-controls="simple-menu"
@@ -31,6 +32,7 @@ export const Default = () => {
           <SearchIcon width={32} height={32} className="fill-white" />
         </IconButton>
       </Tooltip>
+      <div style={{ height: "150vh" }}></div>
     </>
   );
 };

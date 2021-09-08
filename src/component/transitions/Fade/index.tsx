@@ -5,7 +5,11 @@ const Fade: FC<any> = ({ show, children }) => {
   return (
     <CSSTransition
       in={show}
-      timeout={200}
+      timeout={{
+        appear: 300,
+        enter: 0,
+        exit: 0,
+      }}
       mountOnEnter
       unmountOnExit
       classNames={{

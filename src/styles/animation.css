@@ -16,16 +16,24 @@
 
 .opacity--enter {
   opacity: 0;
+  /*  transition: opacity 200ms ease-in;  */
 }
 .opacity--enter-active {
   opacity: 1;
-  transition: opacity 200ms ease-in;
+  transition: opacity 300ms ease-in;
+  /*  transition-property: opacity;
+  transition-delay: 0;
+  transition-timing-function: ease-in; */
 }
 .opacity--exit {
   opacity: 1;
+  /*  transition: opacity 200ms ease-in;  */
 }
 .opacity--exit-active {
   opacity: 0;
+  /*  transition-property: opacity;
+  transition-delay: 0;
+  transition-timing-function: ease-in; */
   transition: opacity 200ms ease-in;
 }
 

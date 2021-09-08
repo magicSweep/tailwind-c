@@ -30,14 +30,20 @@ export { default as PlusIcon } from "./component/icons/PlusIcon";
 export { default as SearchIcon } from "./component/icons/SearchIcon";
 export { default as SuccessIcon } from "./component/icons/SuccessIcon";
 export { default as WarningIcon } from "./component/icons/WarningIcon";
-export { default as CloudDownload } from "./component/icons/CloudDownload";
+export { default as CloudDownloadIcon } from "./component/icons/CloudDownload";
 export { default as EditIcon } from "./component/icons/EditIcon";
+export { default as LockIcon } from "./component/icons/LockIcon";
+export { default as ExitToAppIcon } from "./component/icons/ExitToAppIcon";
+export { default as AccountCircleIcon } from "./component/icons/AccountCircleIcon";
 
 export { default as Tag } from "./component/Tag";
 
 // PORTALS
 export { default as Alert } from "./component/portals/Alert";
-export { default as ContextMenu } from "./component/portals/ContextMenu";
+export {
+  default as ContextMenu,
+  MenuItem,
+} from "./component/portals/ContextMenu";
 export { default as CenteredModal } from "./component/portals/Modal/CenteredModal";
 export { default as SliderModal } from "./component/portals/Modal/SliderModal";
 export { default as Popper } from "./component/portals/Popper";
