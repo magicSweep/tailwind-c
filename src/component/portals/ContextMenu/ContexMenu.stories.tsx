@@ -5,6 +5,7 @@ import Button from "../../buttons/Button";
 import Portal from "../Portal";
 import { useContext } from "./../hook";
 import ExitToAppIcon from "../../icons/ExitToAppIcon";
+import { PositionType } from "../hook";
 
 export default {
   component: ContextMenu,
@@ -12,13 +13,25 @@ export default {
 };
 
 export const Default = () => {
-  const { show, position, close, open } = useContext("start", () =>
+  const [positionType, setPositionType] = useState<PositionType>("start");
+
+  const { show, position, close, open } = useContext(positionType, () =>
     console.log("------Close")
   );
 
   return (
     <div>
       <div style={{ height: "40vh" }}></div>
+
+      <Button onClick={() => setPositionType("start")}>
+        Set START position type
+      </Button>
+      <Button onClick={() => setPositionType("end")}>
+        Set END position type
+      </Button>
+
+      <hr />
+
       <Button
         aria-controls="simple-menu"
         aria-haspopup="true"
@@ -26,6 +39,7 @@ export const Default = () => {
       >
         Open Menu
       </Button>
+
       <ContextMenu show={show} onClose={close} position={position}>
         <MenuItem onClick={close}>Profile</MenuItem>
         <MenuItem onClick={close}>My account</MenuItem>

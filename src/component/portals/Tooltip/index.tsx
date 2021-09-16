@@ -7,7 +7,7 @@ import {
   useState,
 } from "react";
 import Fade from "../../transitions/Fade";
-import { useContext } from "../hook";
+import { useContext, PositionType } from "../hook";
 import Portal from "../Portal";
 
 const getUpdatedChildren = (
@@ -41,17 +41,17 @@ const getUpdatedChildren = (
   });
 };
 
-const Tooltip = ({ text, children }: any) => {
+const Tooltip = ({ text, positionType, children }: any) => {
   //const anchorRef: MutableRefObject<any> = useRef();
-  const { show, close, open, position } = useContext("bottom");
+  const { show, close, open, position } = useContext(positionType);
 
   const onMouseEnter = (event: any) => {
-    console.log("ON MOUSE ENTER");
+    //console.log("ON MOUSE ENTER");
     open(event.currentTarget);
   };
 
   const onMouseLeave = (event: any) => {
-    console.log("ON MOUSE LEAVE");
+    //console.log("ON MOUSE LEAVE");
     close();
   };
 
@@ -61,7 +61,7 @@ const Tooltip = ({ text, children }: any) => {
     onMouseLeave
   );
 
-  console.log("TOOLTIP RENDER", show, position);
+  //console.log("TOOLTIP RENDER", show, position);
 
   return (
     <>

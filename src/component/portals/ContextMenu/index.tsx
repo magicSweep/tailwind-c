@@ -50,6 +50,7 @@ const ContextMenu: FC<any> = ({ show, position, onClose, children }) => {
               bg-paper 
               overflow-hidden 
               shadow-lg
+              max-w-200
               rounded 
               px-0
               m-0

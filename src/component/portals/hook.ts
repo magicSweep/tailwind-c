@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-export type PositionType = "start" | "end" | "bottom";
+export type PositionType = "start" | "end" | "bottom" | "top";
 export type Position = {
   top?: number;
   left?: number;
@@ -20,6 +20,8 @@ export const calcPosition = (
 
   const windowClientWidth = document.documentElement.clientWidth;
 
+  //console.log("CALC POSITION", rect, windowClientWidth);
+
   switch (positionType) {
     case "start":
       return {
@@ -28,12 +30,19 @@ export const calcPosition = (
       };
     case "end":
       return {
-        top: rect.bottom,
-        left: windowClientWidth - rect.left - rect.width,
+        top: rect.top,
+        //right: rect.right,
+        right: windowClientWidth - rect.left - rect.width,
       };
     case "bottom":
       return {
-        top: rect.bottom,
+        top: rect.bottom - 5,
+        left: rect.left,
+      };
+    case "top":
+      console.error(`No implementation for position type top`);
+      return {
+        bottom: rect.top /* rect.bottom - rect.height * 2, */,
         left: rect.left,
       };
 
@@ -104,6 +113,8 @@ export const useContext = (
       window.addEventListener("resize", onCloseMenu);
 
       positionRef.current = calcPosition(anchorEl as HTMLElement, positionType);
+
+      //console.log("CALC POSITION 2", positionRef.current);
     },
     [positionType]
   );

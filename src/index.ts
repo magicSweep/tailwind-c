@@ -70,3 +70,7 @@ export { default as AdaptiveImage } from "./component/images/AdaptiveImage";
 
 export { default as ThemeProvider } from "./theme/ThemeProvider";
 export { ThemeContext } from "./theme/ThemeProvider/ThemeContext";
+
+// CAROUSEL
+export { default as CarouselOpacity } from "./container/Carousel/CarouselOpacity";
+export { useCarouselOpacity } from "./container/Carousel/CarouselOpacity/hook";

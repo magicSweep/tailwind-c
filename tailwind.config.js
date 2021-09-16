@@ -66,6 +66,7 @@ const config = {
       maxWidth: {
         101: "calc(100% - 32px)",
         345: "345px",
+        200: "200px",
       },
       maxHeight: {
         101: "calc(100% - 32px)",
@@ -77,8 +78,12 @@ const config = {
       height: {
         194: "194px",
       },
+      margin: {
+        "-full": "-100%",
+      },
     },
     variants: {
+      //margin: ["first"],
       borderColor: ["focus-within", "focus", "hover"],
       borderWidth: ["focus-within", "focus", "hover"],
       extend: {},
@@ -86,6 +91,9 @@ const config = {
     plugins: [
       /* require("@tailwindcss/forms") */
     ],
+  },
+  variants: {
+    margin: ["responsive", "hover", "first"],
   },
 };
 

@@ -2,6 +2,8 @@
 
 ## Build
 
+- write imports for new files in src/index.ts
+
 - /src/theme/merge - files for tailwind config it must be es5 compatible, that's why it compiles separate of main compilation and then copy to dist folder
 
 - for publish first commit all changes, then run $ npm run build:lib then $ npm run release
