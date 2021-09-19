@@ -1,6 +1,6 @@
-import { merge, mergeConfig } from "./merge";
+import { mergeConfig } from "./merge";
 
-const config = {
+const tailwindCConfig = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   //purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -46,104 +46,59 @@ const config = {
         201: "calc(100% - 32px)",
       },
     },
-    variants: {
-      borderStyle: ["focus-within", "focus", "hover"],
-      extend: {},
-    },
-    plugins: [
-      /* require("@tailwindcss/forms") */
-    ],
   },
+  variants: {
+    //margin: ["responsive", "hover", "first"],
+    extend: {
+      margin: ["first"],
+      borderColor: ["focus-within", "focus", "hover"],
+      borderWidth: ["focus-within", "focus", "hover"],
+    },
+  },
+  plugins: [
+    /* require("@tailwindcss/forms") */
+  ],
 };
 
-const res = {
-  darkMode: false,
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+const targetConfig = {
+  purge: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/tailwind-c/**/*.{js,jsx,ts,tsx}",
+  ],
+  //purge: [],
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      animation: {
-        progress: "progress 3s ease 0s infinite normal none running",
-        progress1: "progress 3s ease 0s infinite normal none running",
-        ripple: "ripple .6s linear",
-        ripple1: "ripple .6s linear",
+      height: {
+        330: "330px",
+        345: "345px",
+        310: "310px",
       },
-      borderColor: {
-        body: "var(--color-text)",
-        "btn-hover": "var(--color-btn-hover)",
-        disabled: "var(--color-disabled)",
-        error: "var(--color-error)",
-        info: "var(--color-info)",
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        success: "var(--color-success)",
-        title: "var(--color-title)",
-        warning: "var(--color-warning)",
-        white: "var(--color-white)",
+      width: {
+        500: "500px",
       },
-      colors: {
-        body: "var(--color-text)",
-        "btn-hover": "var(--color-btn-hover)",
-        disabled: "var(--color-disabled)",
-        error: "var(--color-error)",
-        info: "var(--color-info)",
-        paper: "var(--color-paper)",
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        success: "var(--color-success)",
-        title: "var(--color-title)",
-        warning: "var(--color-warning)",
-        white: "var(--color-white)",
+      maxWidth: {
+        1140: "1140px",
       },
-      fill: {
-        body: "var(--color-text)",
-        "btn-hover": "var(--color-btn-hover)",
-        disabled: "var(--color-disabled)",
-        error: "var(--color-error)",
-        info: "var(--color-info)",
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        success: "var(--color-success)",
-        title: "var(--color-title)",
-        warning: "var(--color-warning)",
-        white: "var(--color-white)",
+      minHeight: {
+        70: "70px",
       },
-      keyframes: {
-        progress: { "0%": { left: "-30%" }, "100%": { left: "100%" } },
-        progress1: { "0%": { left: "-30%" }, "100%": { left: "100%" } },
-        ripple: { "100%": { opacity: 0, transform: "scale(2)" } },
-        ripple1: { "100%": { opacity: 0, transform: "scale(2)" } },
-      },
-      maxHeight: { "101": "calc(100% - 32px)", "201": "calc(100% - 32px)" },
-      maxWidth: { "101": "calc(100% - 32px)", "201": "calc(100% - 32px)" },
-      minHeight: { "36": "9rem", "5": "1.25rem", "6": "1.25rem", "83": "9rem" },
-      minWidth: { "2": "18rem", "72": "18rem" },
-      textColor: {
-        body: "var(--color-text)",
-        disabled: "var(--color-disabled)",
-        error: "var(--color-error)",
-        info: "var(--color-info)",
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        success: "var(--color-success)",
-        title: "var(--color-title)",
-        warning: "var(--color-warning)",
-        white: "var(--color-white)",
-      },
-    },
-    plugins: [],
-    variants: {
-      borderColor: ["focus-within", "focus", "hover"],
-      borderStyle: ["focus-within", "focus", "hover"],
-      borderWidth: ["focus-within", "focus", "hover"],
-      extend: {},
     },
   },
+  variants: {
+    extend: {
+      padding: ["last"],
+    },
+  },
+  plugins: [
+    /* require("@tailwindcss/forms") */
+  ],
 };
 
-describe("merge", () => {
+describe("mergeConfig", () => {
   test("", () => {
-    const res = merge(config);
+    const res = mergeConfig(targetConfig, tailwindCConfig);
 
-    expect(res).toEqual(res);
+    expect(res).toEqual("hello");
   });
 });

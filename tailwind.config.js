@@ -82,18 +82,14 @@ const config = {
         "-full": "-100%",
       },
     },
-    variants: {
-      //margin: ["first"],
-      borderColor: ["focus-within", "focus", "hover"],
-      borderWidth: ["focus-within", "focus", "hover"],
-      extend: {},
-    },
-    plugins: [
-      /* require("@tailwindcss/forms") */
-    ],
   },
   variants: {
-    margin: ["responsive", "hover", "first"],
+    //margin: ["responsive", "hover", "first"],
+    extend: {
+      margin: ["first"],
+      borderColor: ["focus-within", "focus", "hover"],
+      borderWidth: ["focus-within", "focus", "hover"],
+    },
   },
 };
 
