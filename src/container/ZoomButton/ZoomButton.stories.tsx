@@ -21,6 +21,7 @@ const Template: Story<any> = (args) => (
     steps={3}
     onZoomIn={() => console.log("ZOOM IN")}
     onZoomOut={() => console.log("ZOOM OUT")}
+    reset={() => console.log("onCloseSlider")}
   />
 );
 

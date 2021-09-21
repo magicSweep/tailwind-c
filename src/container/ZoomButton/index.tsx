@@ -59,14 +59,16 @@ const SliderWithControls = ({
 
 export interface ZoomButtonProps {
   steps: number;
-  onZoomIn: () => void;
-  onZoomOut: () => void;
+  reset?: (event?: any) => void;
+  onZoomIn: (event?: any) => void;
+  onZoomOut: (event?: any) => void;
 }
 
 export const ZoomButton: FC<ZoomButtonProps> = ({
   steps,
   onZoomIn,
   onZoomOut,
+  reset,
 }) => {
   //const [show, setShow] = useState(false);
 
@@ -93,6 +95,8 @@ export const ZoomButton: FC<ZoomButtonProps> = ({
         },
       });
     } else {
+      if (reset) reset();
+
       setState((state) => ({
         ...state,
         show: false,
