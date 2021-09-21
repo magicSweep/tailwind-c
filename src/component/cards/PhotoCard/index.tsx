@@ -105,13 +105,13 @@ const PhotoCard: FC<PhotoCardProps> = ({ title, yearsOld }) => {
       </CardImage>
 
       <CardActions>
-        <Tooltip text="Редактировать">
+        <Tooltip text="Редактировать" positionType="bottom">
           <IconButton color="transparent">
             <EditIcon width={22} height={22} className={`fill-secondary`} />
           </IconButton>
         </Tooltip>
 
-        <Tooltip text="Скачать оригинальный файл">
+        <Tooltip text="Скачать оригинальный файл" positionType="bottom">
           <IconButton color="transparent">
             <CloudDownload
               width={22}
