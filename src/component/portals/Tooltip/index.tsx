@@ -41,7 +41,15 @@ const getUpdatedChildren = (
   });
 };
 
-const Tooltip = ({ text, positionType, children }: any) => {
+const Tooltip = ({
+  text,
+  positionType,
+  children,
+}: {
+  text: string;
+  positionType: PositionType;
+  children: any;
+}) => {
   //const anchorRef: MutableRefObject<any> = useRef();
   const { show, close, open, position } = useContext(positionType);
 

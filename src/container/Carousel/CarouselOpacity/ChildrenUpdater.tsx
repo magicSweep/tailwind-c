@@ -32,10 +32,12 @@ const ChildrenUpdater: FC<IChildrenUpdaterProps> = ({
   return Children.map(children, (child, index) => {
     let style = getItemStyle(index, activeIndex);
 
+    const uid = Date.now();
+
     const isActive = activeIndex === index;
     return (
       <li
-        key={`ChildrenUpdater_${activeIndex}_${index}`}
+        key={`ChildrenUpdater_${activeIndex}_${index}_${uid}`}
         className="w-full h-full opacity-0 p-0 -ml-full flex-grow-0 flex-shrink-0 first:ml-0"
         data-index={index}
         ref={isActive ? activeItemRef : undefined}

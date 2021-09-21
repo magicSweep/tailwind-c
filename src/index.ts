@@ -22,11 +22,15 @@ export { default as HeroTitle } from "./component/HeroTitle";
 
 // ICONS
 export { default as BaseIcon } from "./component/icons/BaseIcon";
+export { default as DescIcon } from "./component/icons/DescIcon";
+export { default as ZoomInIcon } from "./component/icons/ZoomInIcon";
+export { default as ZoomOutIcon } from "./component/icons/ZoomOutIcon";
 export { default as ArrowIcon } from "./component/icons/ArrowIcon";
 export { default as CloseIcon } from "./component/icons/CloseIcon";
 export { default as ErrorIcon } from "./component/icons/ErrorIcon";
 export { default as InfoIcon } from "./component/icons/InfoIcon";
 export { default as PlusIcon } from "./component/icons/PlusIcon";
+export { default as MinusIcon } from "./component/icons/MinusIcon";
 export { default as SearchIcon } from "./component/icons/SearchIcon";
 export { default as SuccessIcon } from "./component/icons/SuccessIcon";
 export { default as WarningIcon } from "./component/icons/WarningIcon";
@@ -37,6 +41,10 @@ export { default as ExitToAppIcon } from "./component/icons/ExitToAppIcon";
 export { default as AccountCircleIcon } from "./component/icons/AccountCircleIcon";
 
 export { default as Tag } from "./component/Tag";
+
+export { Slider, useSlider } from "./component/Slider";
+
+export { ZoomButton } from "./container/ZoomButton";
 
 // PORTALS
 export { default as Alert } from "./component/portals/Alert";
