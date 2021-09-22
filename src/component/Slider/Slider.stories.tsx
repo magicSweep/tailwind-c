@@ -13,7 +13,11 @@ export default {
 };
 
 const Template: Story<any> = (args) => {
-  const { setIndex, ...props } = useSlider(5);
+  const { setIndex, ...props } = useSlider(
+    5,
+    () => console.log("increase"),
+    () => console.log("decrease")
+  );
   return (
     <div className="flex justify-center items-center w-full">
       <div className="mr-3">
